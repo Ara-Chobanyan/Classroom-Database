@@ -20,6 +20,7 @@ func GetStudent(db *sql.DB, id int) (*student, error) {
 	return &s, nil
 }
 
+// AllStudents - Querys all students in the class table
 func AllStudents(db *sql.DB) ([]student, error) {
 	rows, err := db.Query("SELECT * FROM class_records")
 	if err != nil {
