@@ -3,6 +3,7 @@ package menu
 import (
 	"database/sql"
 	"fmt"
+	"os"
 
 	"github.com/Ara-chobanyan/findaverage-with-db/studentdb"
 	_ "github.com/lib/pq"
@@ -60,7 +61,7 @@ func Start() {
 		db, err = sql.Open("postgres", psqlInfo)
 		must(err)
 
-		a := GiveAString("Enter Student Name")
+		a := GiveAString("Enter Student Name", os.Stdin)
 
 		fmt.Println(studentdb.FindStudentByName(db, a))
 		db.Close()
@@ -71,7 +72,7 @@ func Start() {
 		db, err = sql.Open("postgres", psqlInfo)
 		must(err)
 
-		a := GiveAInt("Enter the student Id")
+		a := GiveAInt("Enter the student Id", os.Stdin)
 
 		fmt.Println(studentdb.FindStudent(db, a))
 		db.Close()
@@ -82,8 +83,8 @@ func Start() {
 		db, err = sql.Open("postgres", psqlInfo)
 		must(err)
 
-		a := GiveAString("Enter Student name")
-		b := CreateAStudentGrade()
+		a := GiveAString("Enter Student name", os.Stdin)
+		b := CreateAStudentGrade(os.Stdin)
 
 		_, err := studentdb.InsertStudent(db, a, b)
 		must(err)
@@ -96,7 +97,7 @@ func Start() {
 		db, err = sql.Open("postgres", psqlInfo)
 		must(err)
 
-		a := GiveAInt("Enter student Id")
+		a := GiveAInt("Enter student Id", os.Stdin)
 
 		err = studentdb.DeleteUser(db, a)
 		must(err)
@@ -108,8 +109,8 @@ func Start() {
 		db, err = sql.Open("postgres", psqlInfo)
 		must(err)
 
-		a := GiveAInt("Enter Student Id")
-		b := CreateAStudentGrade()
+		a := GiveAInt("Enter Student Id", os.Stdin)
+		b := CreateAStudentGrade(os.Stdin)
 
 		err = studentdb.UpdateUser(db, a, b)
 		must(err)

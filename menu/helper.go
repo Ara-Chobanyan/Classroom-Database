@@ -3,42 +3,43 @@ package menu
 import (
 	"bufio"
 	"fmt"
-	"os"
+	"io"
+	"math"
 	"strconv"
 	"strings"
 )
 
-func GiveAInt(a string) int {
+func GiveAInt(a string, r io.Reader) int {
 	fmt.Println(a)
 	var i int
-	_, err := fmt.Scanf("%d", &i)
+	_, err := fmt.Fscanf(r, "%d", &i)
 	if err != nil {
 		fmt.Println(err)
 	}
 	return i
 }
 
-func GiveAString(a string) string {
+func GiveAString(a string, r io.Reader) string {
 	fmt.Println(a)
-	var i string
-	_, err := fmt.Scanf("%s", &i)
+	var n string
+	_, err := fmt.Fscanf(r, "%s", &n)
 	if err != nil {
 		fmt.Println(err)
 	}
-	return i
+	return n
 }
 
-func CreateAStudentGrade() float32 {
+func CreateAStudentGrade(r io.Reader) float64 {
 	var grades []int
 	fmt.Println("Please Enter grades with space in between")
 
-	scanner := bufio.NewScanner(os.Stdin)
+	scanner := bufio.NewScanner(r)
 
 	scanner.Scan()
 	grades = ConvertStringToSlice(scanner.Text())
 
 	a := FindAverage(grades)
-	return a
+	return math.RoundToEven(a)
 }
 
 func ConvertStringToSlice(s string) []int {
@@ -52,12 +53,12 @@ func ConvertStringToSlice(s string) []int {
 	return n
 }
 
-func FindAverage(grades []int) float32 {
+func FindAverage(grades []int) float64 {
 	length := len(grades)
 	sum := 0
 
 	for i := 0; i < length; i++ {
 		sum += grades[i]
 	}
-	return (float32(sum)) / (float32(length))
+	return (float64(sum)) / (float64(length))
 }
