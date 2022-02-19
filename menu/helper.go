@@ -61,8 +61,3 @@ func FindAverage(grades []int) float32 {
 	}
 	return (float32(sum)) / (float32(length))
 }
-
-/*
-Create a function that takes in strings put them into an
-slice finds the average and outputs a number
-*/

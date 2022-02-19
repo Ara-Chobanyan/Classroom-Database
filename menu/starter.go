@@ -43,19 +43,19 @@ func Start() {
 		Start()
 		// Output the entire roster
 	case "2":
-		defer db.Close()
 		psqlInfo = fmt.Sprintf("%s dbname=%s", psqlInfo, dbname)
 		db, err = sql.Open("postgres", psqlInfo)
 		must(err)
+
 		allStudents, err := studentdb.AllStudents(db)
 		must(err)
 		for _, p := range allStudents {
 			fmt.Printf("%+v\n", p)
 		}
+		db.Close()
 		Start()
 		// Find student by there name
 	case "3":
-		defer db.Close()
 		psqlInfo = fmt.Sprintf("%s dbname=%s", psqlInfo, dbname)
 		db, err = sql.Open("postgres", psqlInfo)
 		must(err)
@@ -63,10 +63,10 @@ func Start() {
 		a := GiveAString("Enter Student Name")
 
 		fmt.Println(studentdb.FindStudentByName(db, a))
+		db.Close()
 		Start()
 		//Find student by there ID
 	case "4":
-		defer db.Close()
 		psqlInfo = fmt.Sprintf("%s dbname=%s", psqlInfo, dbname)
 		db, err = sql.Open("postgres", psqlInfo)
 		must(err)
@@ -74,10 +74,10 @@ func Start() {
 		a := GiveAInt("Enter the student Id")
 
 		fmt.Println(studentdb.FindStudent(db, a))
+		db.Close()
 		Start()
 		//Add a new student to the class
 	case "5":
-		defer db.Close()
 		psqlInfo = fmt.Sprintf("%s dbname=%s", psqlInfo, dbname)
 		db, err = sql.Open("postgres", psqlInfo)
 		must(err)
@@ -88,10 +88,10 @@ func Start() {
 		_, err := studentdb.InsertStudent(db, a, b)
 		must(err)
 
+		db.Close()
 		Start()
 		// Remove student from the class (ID required)
 	case "6":
-		defer db.Close()
 		psqlInfo = fmt.Sprintf("%s dbname=%s", psqlInfo, dbname)
 		db, err = sql.Open("postgres", psqlInfo)
 		must(err)
@@ -100,10 +100,10 @@ func Start() {
 
 		err = studentdb.DeleteUser(db, a)
 		must(err)
+		db.Close()
 		Start()
 		// Update student from the class (ID required)
 	case "7":
-		defer db.Close()
 		psqlInfo = fmt.Sprintf("%s dbname=%s", psqlInfo, dbname)
 		db, err = sql.Open("postgres", psqlInfo)
 		must(err)
@@ -113,6 +113,7 @@ func Start() {
 
 		err = studentdb.UpdateUser(db, a, b)
 		must(err)
+		db.Close()
 		Start()
 		//exit
 	case "8":
