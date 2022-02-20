@@ -25,4 +25,4 @@ A simple program that creates a PostgreSQL database and a class room table that 
 
 # TODO
 
-- [] Using Docker for this project, so anyone can download it without needing to download and configure PostgreSQL.
+- [ ]  Using Docker for this project, so anyone can download it without needing to download and configure PostgreSQL.
