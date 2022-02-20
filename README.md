@@ -1,6 +1,6 @@
 # Find The Students Average (With A Database)
 
-A simple program that creates a PostgreSQL database and a class room table that stores the students name,id and average grade, as well having CRUD operations.
+A simple program that creates a PostgreSQL database and a class room table that stores the students name,id and average grade, as well as having CRUD operations.
 
 # What I learned
 
