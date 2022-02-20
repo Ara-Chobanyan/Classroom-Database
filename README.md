@@ -27,3 +27,4 @@ A simple program that creates a PostgreSQL database and a class room table that 
 
 - [ ]  Using Docker for this project, so anyone can download it without needing to download and configure PostgreSQL.
 - [ ]  Cleaning up some code and creating better comments.
+- [ ]  Making tests for SQL based functions.
