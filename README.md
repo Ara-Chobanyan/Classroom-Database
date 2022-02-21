@@ -16,8 +16,8 @@ A simple program that creates a PostgreSQL database and a class room table that 
 # What I struggled with
 
 - Creating code that does not repeat for when opening the database.
-- Usage of the proper functions from the database/SQL library (Like when to open and close a database, as well proper parameters for queries).
-- Creating test for the SQL based functions. (Shot my self in the foot in the way I designed the SQL functions. Next project will not have the same design)
+- Usage of the proper functions from the database/SQL library(Like when to open and close a database, as well proper parameters for queries).
+- Creating test for the SQL based functions(Shot my self in the foot in the way I designed the SQL functions. Next project will not have the same design).
 
 # Credit
 
