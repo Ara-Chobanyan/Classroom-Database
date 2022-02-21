@@ -12,11 +12,12 @@ import (
 const (
 	host     = "localhost"
 	port     = "5432"
-	user     = "ara"
-	password = "arayik01"
+	user     = "name"
+	password = "password"
 	dbname   = "class_average"
 )
 
+// Start - Starts the application
 func Start() {
 	psqlInfo := fmt.Sprintf("host=%s port=%s user=%s password=%s sslmode=disable", host, port, user, password)
 	db, err := sql.Open("postgres", psqlInfo)
@@ -74,7 +75,7 @@ func Start() {
 
 		a := GiveAInt("Enter the student Id", os.Stdin)
 
-		fmt.Println(studentdb.FindStudent(db, a))
+		fmt.Println(studentdb.FindStudentById(db, a))
 		db.Close()
 		Start()
 		//Add a new student to the class

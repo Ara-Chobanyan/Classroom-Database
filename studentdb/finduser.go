@@ -12,7 +12,7 @@ type Student struct {
 }
 
 // FindStudent - Finds a single Student by id that returns the students name and grade
-func FindStudent(db *sql.DB, id int) (*Student, error) {
+func FindStudentById(db *sql.DB, id int) (*Student, error) {
 	var s Student
 	row := db.QueryRow("SELECT * FROM class_records WHERE id=$1", id)
 	err := row.Scan(&s.id, &s.name, &s.grade)

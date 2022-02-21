@@ -9,6 +9,7 @@ import (
 	"strings"
 )
 
+// GiveAInt - Returns a int used for students id
 func GiveAInt(a string, r io.Reader) int {
 	fmt.Println(a)
 	var i int
@@ -19,6 +20,7 @@ func GiveAInt(a string, r io.Reader) int {
 	return i
 }
 
+// GiveAString - Returns a string used for students name
 func GiveAString(a string, r io.Reader) string {
 	fmt.Println(a)
 	var n string
@@ -29,6 +31,7 @@ func GiveAString(a string, r io.Reader) string {
 	return n
 }
 
+// CreateAStudentGrade - Creates a new student as well averaging there grades inputed and rounding them to even
 func CreateAStudentGrade(r io.Reader) float64 {
 	var grades []int
 	fmt.Println("Please Enter grades with space in between")
@@ -53,6 +56,7 @@ func ConvertStringToSlice(s string) []int {
 	return n
 }
 
+// FindAverage - Takes in a []int and finds there average and Returns a float64
 func FindAverage(grades []int) float64 {
 	length := len(grades)
 	sum := 0

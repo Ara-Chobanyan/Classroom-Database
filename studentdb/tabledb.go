@@ -33,6 +33,7 @@ func UpdateUser(db *sql.DB, id int, grade float64) error {
 	return err
 }
 
+// DeleteUser - Find a student by there id and delete them
 func DeleteUser(db *sql.DB, id int) error {
 	statement := `DELETE FROM class_records WHERE id=$1`
 	_, err := db.Exec(statement, id)
