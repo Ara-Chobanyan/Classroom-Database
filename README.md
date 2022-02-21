@@ -11,7 +11,7 @@ A simple program that creates a PostgreSQL database and a class room table that 
 - Creating tests that require user inputs and being able to mock them.
 - Reinforced usage of pointers when creating a student data structure.
 - Merging a existing project to this project.
-- Creating a terminal interface that interacts with an database, while allowing CRUD based operations.
+- Creating a terminal interface that interacts with a database, while allowing CRUD based operations.
 
 # What I struggled with
 
