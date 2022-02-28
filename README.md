@@ -2,6 +2,12 @@
 
 A simple program that creates a PostgreSQL database and a class room table that stores the students name, id and average grade, as well as having CRUD operations.
 
+# Purpose
+
+The main purpose of this project was to really learn more about how to use a database with Go in a simple environment and building on top of my previous project. As well to tinker with
+the database/SQL library and not using a ORM.  
+
+
 # What I learned
 
 - SQL queries and fundamental understanding of PostgreSQL and in general SQL based concepts.
