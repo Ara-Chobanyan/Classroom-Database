@@ -7,7 +7,7 @@ A simple program that creates a PostgreSQL database and a class room table that 
 The main purpose of this project was to really learn more about how to use a database with Go in a simple environment and building on top of my previous project. As well to tinker with
 the database/SQL library and not using a ORM. Overall its a super simple project that just creates a database and a table, which then allows the user to operate crud operations with the data. Nothing too fancy just wanted to experiment with simple back-end logic, mixed in with a database queries.  
 
-# Install 
+# Instructions 
 Just clone the repo and run go mod tidy, after that go into the starter.go file and change the default const to your credentials.
 Will need a running PostgreSQL instance running, after all that you can compile and run it.
 
